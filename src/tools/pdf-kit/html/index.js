@@ -24,7 +24,10 @@ export default class Html {
   }
 
   setLocale(lang) {
-    i18n.setLocale(lang);
+    i18n.configure({
+      defaultLocale: lang,
+      directory: path.resolve(__dirname, '../../../locales')
+    });
     return this;
   }
 
