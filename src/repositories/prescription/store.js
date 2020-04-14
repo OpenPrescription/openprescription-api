@@ -14,8 +14,8 @@ const notifyCreaction = (
     doctorName,
   })
     .subject(__("Your Prescription"))
-    .attach(new Buffer(prescriptionFile, "base64"), __("prescription.pdf"))
-    .attach(certificate, __("prescription-certificate.pdf"))
+    .attach(new Buffer(prescriptionFile, "base64"), patientName+"-"+__("prescription.pdf"))
+    .attach(certificate, patientName+"-"+__("prescription-certificate.pdf"))
     .to(patientEmail, patientName)
     .from(process.env.MAIL_FROM, process.env.MAIL_FROM_NAME)
     .send();
