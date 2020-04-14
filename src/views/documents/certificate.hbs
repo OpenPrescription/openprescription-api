@@ -316,6 +316,12 @@
     <p class="c6">
       <span class="c1">Email: {{ doctorEmail }}</span>
     </p>
+    <p class="c6"><span class="c1">Details: </span></p>
+    <p class="c6">
+      {{#each doctorExtraInfo}}
+       <pre class="c1">{{ this }} </pre>
+      {{/each}}
+    </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c6"><span class="c5">Patient information:</span></p>
@@ -346,7 +352,8 @@
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c2"><span class="c1"></span></p>
+    <p class="c2" style="page-break-before: always;"><span class="c1"></span></p>
+    <div style="padding-top: 96px;">
     <p class="c6">
       <span class="c5">The prescription was digitally signed as follows:</span>
     </p>

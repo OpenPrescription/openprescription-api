@@ -35,6 +35,7 @@ const createCertificate = async ({
   expiredAt,
   isPrivate,
   blockSignature,
+  doctorExtraInfo
 }) => {
   const blockSignaturePieces = blockSignature.split(";");
   const message = blockSignaturePieces[0];
@@ -55,7 +56,8 @@ const createCertificate = async ({
     blockchainId,
     message,
     digitalSignature,
-    doctorDocumentId
+    doctorDocumentId,
+    doctorExtraInfo
   });
   return pdf.buffer();
 };
@@ -118,6 +120,7 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     expiredAt: expirationDate,
     isPrivate: data.isPrivate,
     blockSignature: JSON.parse(data.doctor).block,
+    doctorExtraInfo: JSON.parse(doctor.doctorExtraInfo)
   });
   console.log("CERTIFY PRESCRIPTION");
   const resPres = await certifyDocument(hash); // Certify prescription document in blockchain
