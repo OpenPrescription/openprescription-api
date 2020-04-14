@@ -294,29 +294,29 @@
       </span>
     </p>
     <p class="c3 c4"><span class="c7"></span></p>
-    <p class="c3"><span class="c0">Certificate of Authenticity</span></p>
+    <p class="c3"><span class="c0">{{__ "Certificate of Authenticity"}}</span></p>
     <p class="c2"><span class="c0"></span></p>
     <p class="c2"><span class="c0"></span></p>
     <p class="c6">
       <span class="c1"
-        >Open Prescription certifies the authenticity of the prescription number
-        #{{ prescriptionId }}, whose information and details follow below:</span
+        >{{__ "Open Prescription certifies the authenticity of the prescription number"}}
+        #{{ prescriptionId }}, {{__ "whose information and details follow below:"}}</span
       >
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c6"><span class="c5">Doctor information:</span></p>
+    <p class="c6"><span class="c5">{{__ "Doctor information:" }}</span></p>
     <p class="c6">
-      <span class="c1">Name: {{ doctorName }}</span>
+      <span class="c1">{{__ "Name:"}} {{ doctorName }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Identification number: {{ doctorDocumentId }}</span>
+      <span class="c1">{{__ "Identification number:"}} {{ doctorDocumentId }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Email: {{ doctorEmail }}</span>
+      <span class="c1">{{__ "Email:"}} {{ doctorEmail }}</span>
     </p>
-    <p class="c6"><span class="c1">Details: </span></p>
+    <p class="c6"><span class="c1">{{__ "Details:"}} </span></p>
     <p class="c6">
       {{#each doctorExtraInfo}}
        <pre class="c1">{{ this }} </pre>
@@ -324,54 +324,54 @@
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c6"><span class="c5">Patient information:</span></p>
+    <p class="c6"><span class="c5">{{__ "Patient information:"}}</span></p>
     <p class="c6">
-      <span class="c1">Name: {{ patientName }}</span>
+      <span class="c1">{{__ "Name:"}} {{ patientName }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Document ID: {{ patientDocumentId }}</span>
+      <span class="c1">{{__ "Document ID:"}} {{ patientDocumentId }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Email: {{ patientEmail }}</span>
+      <span class="c1">{{__ "Email:"}} {{ patientEmail }}</span>
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c6"><span class="c5">Prescription information:</span></p>
+    <p class="c6"><span class="c5">{{__ "Prescription information:" }}</span></p>
     <p class="c6">
-      <span class="c10">Prescription </span
-      ><span class="c1">Hash: {{ prescriptionHash }}</span>
+      <span class="c10">{{__ "Prescription" }} </span
+      ><span class="c1">{{__ "Hash:" }} {{ prescriptionHash }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Max number of uses: {{ maxUses }}</span>
+      <span class="c1">{{__ "Max number of uses:" }} {{ maxUses }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Expiration date: {{ expiration }}</span>
+      <span class="c1">{{__ "Expiration date:" }} {{ expiration }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Private prescription: {{ isPrivate }}</span>
+      <span class="c1">{{__ "Private prescription:" }} {{ isPrivate }}</span>
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2" style="page-break-before: always;"><span class="c1"></span></p>
     <div style="padding-top: 96px;">
     <p class="c6">
-      <span class="c5">The prescription was digitally signed as follows:</span>
+      <span class="c5">{{__ "The prescription was digitally signed as follows:" }}</span>
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c6">
-      <span class="c1">Doctor Blockchain ID: {{ blockchainId }}</span>
+      <span class="c1">{{__ "Doctor Blockchain ID:" }} {{ blockchainId }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Digital signature: {{ digitalSignature }}</span>
+      <span class="c1">{{__ "Digital signature:" }} {{ digitalSignature }}</span>
     </p>
     <p class="c6">
-      <span class="c1">Signed message: {{ message }}</span>
+      <span class="c1">{{__ "Signed message:" }} {{ message }}</span>
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c6">
       <span class="c1"
-        >The digital signature can be validated online
-        <a href="https://originalmy.com">here</a>.</span
+        >{{__ "The digital signature can be validated online" }}
+        <a href="https://originalmy.com">{{__ "here" }}</a>.</span
       >
     </p>
   </body>

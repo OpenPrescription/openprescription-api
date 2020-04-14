@@ -2,6 +2,7 @@ import Html2PDF from "html-pdf";
 import Handlebars from "express-handlebars";
 import config from "./config";
 import path from "path";
+import i18n from "i18n";
 
 export default class Html {
   template(template) {
@@ -22,14 +23,31 @@ export default class Html {
     });
   }
 
+  setLocale(lang) {
+    i18n.setLocale(lang);
+    return this;
+  }
+
   async compile(context) {
     const handlebars = Handlebars.create({
       partialsDir: path.resolve(__dirname, "../../../views/documents/partials"),
       extname: ".hbs",
       defaultLayout: "main",
       layoutsDir: path.resolve(__dirname, "../../../views/documents/layouts"),
+      helpers: {
+        __: function () {
+          return i18n.__.apply(this, arguments);
+        },
+        __n: function () {
+          return i18n.__n.apply(this, arguments);
+        },
+      },
     });
-    this.compliedHtml = await this._renderTemplate(handlebars, this.template, context);
+    this.compliedHtml = await this._renderTemplate(
+      handlebars,
+      this.template,
+      context
+    );
     return this;
   }
 
