@@ -4,7 +4,7 @@ import "newrelic";
 import express from "express";
 import path from "path";
 import bodyParser from "body-parser";
-import { PrescriptionRouter } from "./routes";
+import { PrescriptionRouter, DoctorRouter } from "./routes";
 import ResponseMiddleware from "./middlewares/responses";
 import i18n from "i18n";
 import exphbs from "express-handlebars";
@@ -41,7 +41,9 @@ app.use(ResponseMiddleware);
 app.get("/", (req, res) => {
   return res.send("Server UP");
 });
+
 app.use("/prescriptions", PrescriptionRouter);
+app.use("/doctors", DoctorRouter);
 
 app.listen(process.env.PORT || 53535, function (PORT) {
   console.log(

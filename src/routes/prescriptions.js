@@ -11,6 +11,7 @@ const Router = express.Router();
 
 Router.post("/", async (req, res) => {
   try {
+    req.setLocale(req.body.lang);
     const ip = getIPFromRequest(req);
     const document = req.body.prescriptionFile;
     const reqDoctor = JSON.parse(req.body.doctor);
