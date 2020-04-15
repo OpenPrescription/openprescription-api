@@ -53,9 +53,36 @@ const createCertificate = async ({
     expiration: expiredAt,
     isPrivate: isPrivate ? "Yes" : __("No"),
     blockchainId,
-    message,
+    message: `${new Buffer(message).toString("base64")}`,
     digitalSignature,
-    doctorDocumentId
+    doctorDocumentId,
+    certificate_title: __("certificate_title"),
+    certificate_subtitle1: __("certificate_subtitle1"),
+    certificate_subtitle2: __("certificate_subtitle2"),
+    certificate_doctor_info: __("certificate_doctor_info"),
+    certificate_name: __("certificate_name"),
+    certificate_doctor_id: __("certificate_doctor_id"),
+    certificate_patient_info: __("certificate_patient_info"),
+    certificate_document_id: __("certificate_document_id"),
+    certificate_prescription_info: __("certificate_prescription_info"),
+    certificate_prescription: __("certificate_prescription"),
+    certificate_max_uses: __("certificate_max_uses"),
+    certificate_expiration: __("certificate_expiration"),
+    certificate_private: __("certificate_private"),
+    certificate_digital_signature_info: __("certificate_digital_signature_info"),
+    certificate_blockchainid: __("certificate_blockchainid"),
+    certificate_digital_signature: __("certificate_digital_signature"),
+    certificate_message: __("certificate_message"),
+    certificate_validation_link: __("certificate_validation_link"),
+    certificate_here: __("certificate_here"),
+    verifyUrl: `https://originalmy.com/verify?address=${new Buffer(
+        blockchainId
+      ).toString("base64")}&signature=${new Buffer(
+        digitalSignature
+      ).toString("base64")}&message=${new Buffer(message).toString(
+        "base64"
+      )}`,
+
   });
   return pdf.buffer();
 };
