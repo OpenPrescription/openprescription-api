@@ -5,9 +5,14 @@ const Router = express.Router();
 
 Router.post("/validate", async (req, res) => {
   const { country, name, id } = req.body.doctor;
-  if (!Boolean(process.env.DOCTORID_VALIDATION) || id == "99999")
-    return res.success({ isValid: true, validations: [] });
   try {
+    try {
+      const needVerification = await DoctorRepository.validate.newVerificationIsNeeded(
+        id
+      );
+      if (!needVerification)
+        return res.success({ isValid: true, validations: [] });
+    } catch (err) {}
     const result = await DoctorRepository.validate.nationalId(country, {
       name,
       id,
