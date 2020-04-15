@@ -1,8 +1,18 @@
 {
+	"Hello": "Olá",
 	"Your Prescription": "Sua Receita",
 	"prescription.pdf": "receita-medica.pdf",
 	"No": "Não",
 	"Yes": "Sim",
 	"prescription-certificate.pdf": "receita-certificado.pdf",
-	"Prescription not found": "Prescription not found"
+	"Prescription not found": "Prescription not found",
+	"template_name": "prescription_pt",
+	"O médico(a)": "O médico(a)",
+	"enviou a sua receita médica.": "enviou a sua receita médica.",
+	"Atenção": "Atenção",
+	"A receita médica está anexada a este email. Faça download e backup dela em lugar seguro": "A receita médica está anexada a este email. Faça download e backup dela em lugar seguro",
+	"E agora?": "E agora?",
+	"Compartilhe a receita com a farmácia de sua preferência através do email ou whatsapp": "Compartilhe a receita com a farmácia de sua preferência através do email ou whatsapp",
+	"O que eu faço com o certificado?": "O que eu faço com o certificado?",
+	"Faça backup junto com a receita médica. Ele certifica que é uma receita médica válida, assinada digitalmente pelo médico": "Faça backup junto com a receita médica. Ele certifica que é uma receita médica válida, assinada digitalmente pelo médico"
 }
