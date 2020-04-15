@@ -35,12 +35,14 @@ const createCertificate = async ({
   expiredAt,
   isPrivate,
   blockSignature,
+  doctorExtraInfo,
+  lang
 }) => {
   const blockSignaturePieces = blockSignature.split(";");
   const message = blockSignaturePieces[0];
   const blockchainId = blockSignaturePieces[1];
   const digitalSignature = blockSignaturePieces[2];
-  const pdf = await new PDFHtml().template("certificate").compile({
+  const pdf = await new PDFHtml().template("certificate").setLocale(lang).compile({
     prescriptionId,
     patientName,
     patientEmail,
@@ -55,7 +57,8 @@ const createCertificate = async ({
     blockchainId,
     message,
     digitalSignature,
-    doctorDocumentId
+    doctorDocumentId,
+    doctorExtraInfo
   });
   return pdf.buffer();
 };
@@ -90,6 +93,7 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     digitalSignature,
     expirationDate,
     ip,
+    lang
   } = data;
   const prescription = await Prescription.create({
     doctorId: doctor.id,
@@ -118,6 +122,8 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     expiredAt: expirationDate,
     isPrivate: data.isPrivate,
     blockSignature: JSON.parse(data.doctor).block,
+    doctorExtraInfo: JSON.parse(doctor.doctorExtraInfo),
+    lang
   });
   console.log("CERTIFY PRESCRIPTION");
   const resPres = await certifyDocument(hash); // Certify prescription document in blockchain

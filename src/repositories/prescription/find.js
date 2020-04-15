@@ -37,6 +37,9 @@ const pharmacyResume = async (hash) => {
       blockchainid: doctor.blockchainId,
       email: doctor.email,
       companyId: prescription.doctorCompanyId,
+      details: doctor.doctorExtraInfo
+        ? JSON.parse(doctor.doctorExtraInfo)
+        : null,
     },
     patient: {
       name: prescription.patientName,
