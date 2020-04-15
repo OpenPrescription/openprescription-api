@@ -28,6 +28,7 @@ export default class Html {
       defaultLocale: lang,
       directory: path.resolve(__dirname, '../../../locales')
     });
+    i18n.setLocale(lang);
     return this;
   }
 
