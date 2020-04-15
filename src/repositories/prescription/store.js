@@ -14,8 +14,11 @@ const notifyCreaction = (
     doctorName,
   })
     .subject(__("Your Prescription"))
-    .attach(new Buffer(prescriptionFile, "base64"), patientName+"-"+__("prescription.pdf"))
-    .attach(certificate, patientName+"-"+__("prescription-certificate.pdf"))
+    .attach(
+      new Buffer(prescriptionFile, "base64"),
+      patientName + "-" + __("prescription.pdf")
+    )
+    .attach(certificate, patientName + "-" + __("prescription-certificate.pdf"))
     .to(patientEmail, patientName)
     .from(process.env.MAIL_FROM, process.env.MAIL_FROM_NAME)
     .send();
@@ -36,30 +39,59 @@ const createCertificate = async ({
   isPrivate,
   blockSignature,
   doctorExtraInfo,
-  lang
+  lang,
 }) => {
   const blockSignaturePieces = blockSignature.split(";");
   const message = blockSignaturePieces[0];
   const blockchainId = blockSignaturePieces[1];
   const digitalSignature = blockSignaturePieces[2];
-  const pdf = await new PDFHtml().template("certificate").setLocale(lang).compile({
-    prescriptionId,
-    patientName,
-    patientEmail,
-    patientDocumentId,
-    doctorName,
-    doctorId,
-    doctorEmail,
-    prescriptionHash: hash,
-    maxUses,
-    expiration: expiredAt,
-    isPrivate: isPrivate ? "Yes" : __("No"),
-    blockchainId,
-    message,
-    digitalSignature,
-    doctorDocumentId,
-    doctorExtraInfo
-  });
+  const pdf = await new PDFHtml()
+    .template("certificate")
+    .setLocale(lang)
+    .compile({
+      prescriptionId,
+      patientName,
+      patientEmail,
+      patientDocumentId,
+      doctorName,
+      doctorId,
+      doctorEmail,
+      prescriptionHash: hash,
+      maxUses,
+      expiration: expiredAt,
+      isPrivate: isPrivate ? "Yes" : __("No"),
+      blockchainId,
+      message: `${new Buffer(message).toString("base64")}`,
+      digitalSignature,
+      doctorDocumentId,
+      doctorExtraInfo,
+      certificate_title: __("certificate_title"),
+      certificate_subtitle1: __("certificate_subtitle1"),
+      certificate_subtitle2: __("certificate_subtitle2"),
+      certificate_doctor_info: __("certificate_doctor_info"),
+      certificate_name: __("certificate_name"),
+      certificate_doctor_id: __("certificate_doctor_id"),
+      certificate_patient_info: __("certificate_patient_info"),
+      certificate_document_id: __("certificate_document_id"),
+      certificate_prescription_info: __("certificate_prescription_info"),
+      certificate_prescription: __("certificate_prescription"),
+      certificate_max_uses: __("certificate_max_uses"),
+      certificate_expiration: __("certificate_expiration"),
+      certificate_private: __("certificate_private"),
+      certificate_digital_signature_info: __(
+        "certificate_digital_signature_info"
+      ),
+      certificate_blockchainid: __("certificate_blockchainid"),
+      certificate_digital_signature: __("certificate_digital_signature"),
+      certificate_message: __("certificate_message"),
+      certificate_validation_link: __("certificate_validation_link"),
+      certificate_here: __("certificate_here"),
+      verifyUrl: `https://originalmy.com/verify?address=${new Buffer(
+        blockchainId
+      ).toString("base64")}&signature=${new Buffer(digitalSignature).toString(
+        "base64"
+      )}&message=${new Buffer(message).toString("base64")}`,
+    });
   return pdf.buffer();
 };
 
@@ -93,7 +125,7 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     digitalSignature,
     expirationDate,
     ip,
-    lang
+    lang,
   } = data;
   const prescription = await Prescription.create({
     doctorId: doctor.id,
@@ -123,7 +155,7 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     isPrivate: data.isPrivate,
     blockSignature: JSON.parse(data.doctor).block,
     doctorExtraInfo: JSON.parse(doctor.doctorExtraInfo),
-    lang
+    lang,
   });
   console.log("CERTIFY PRESCRIPTION");
   const resPres = await certifyDocument(hash); // Certify prescription document in blockchain

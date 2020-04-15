@@ -74,7 +74,7 @@
         font-weight: 400;
         text-decoration: none;
         vertical-align: baseline;
-        font-size: 11px;
+        font-size: 10px;
         font-family: "Roboto";
         font-style: normal;
       }
@@ -106,7 +106,7 @@
       .c8 {
         background-color: #ffffff;
         max-width: 451.5px;
-        padding: 96px 96px 96px 96px;
+        padding: 10px 96px 96px 96px;
       }
 
       .c4 {
@@ -294,85 +294,89 @@
       </span>
     </p>
     <p class="c3 c4"><span class="c7"></span></p>
-    <p class="c3"><span class="c0">{{__ "Certificate of Authenticity"}}</span></p>
+    <p class="c3"><span class="c0">{{ certificate_title }}</span></p>
     <p class="c2"><span class="c0"></span></p>
     <p class="c2"><span class="c0"></span></p>
     <p class="c6">
       <span class="c1"
-        >{{__ "Open Prescription certifies the authenticity of the prescription number"}}
-        #{{ prescriptionId }}, {{__ "whose information and details follow below:"}}</span
+        >{{ certificate_subtitle1 }}
+        #{{ prescriptionId }}, {{ certificate_subtitle2 }}</span
       >
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c6"><span class="c5">{{__ "Doctor information:" }}</span></p>
+    <p class="c6"><span class="c5">{{ certificate_doctor_info }}:</span></p>
     <p class="c6">
-      <span class="c1">{{__ "Name:"}} {{ doctorName }}</span>
+      <span class="c1">{{ certificate_name }}: {{ doctorName }}</span>
     </p>
     <p class="c6">
-      <span class="c1">{{__ "Identification number:"}} {{ doctorDocumentId }}</span>
+      <span class="c1">{{ certificate_doctor_id }}: {{ doctorDocumentId }}</span>
     </p>
     <p class="c6">
       <span class="c1">{{__ "Email:"}} {{ doctorEmail }}</span>
     </p>
+    {{#if doctorExtraInfo}}
     <p class="c6"><span class="c1">{{__ "Details:"}} </span></p>
     <p class="c6">
       {{#each doctorExtraInfo}}
        <pre class="c1">{{ this }} </pre>
       {{/each}}
     </p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c6"><span class="c5">{{__ "Patient information:"}}</span></p>
+    {{/if}}
+
+    <p class="c6"><span class="c5">{{ certificate_patient_info }}:</span></p>
     <p class="c6">
-      <span class="c1">{{__ "Name:"}} {{ patientName }}</span>
+      <span class="c1">{{ certificate_name }}: {{ patientName }}</span>
     </p>
     <p class="c6">
-      <span class="c1">{{__ "Document ID:"}} {{ patientDocumentId }}</span>
+      <span class="c1">{{ certificate_document_id }}: {{ patientDocumentId }}</span>
     </p>
     <p class="c6">
       <span class="c1">{{__ "Email:"}} {{ patientEmail }}</span>
     </p>
+
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c6"><span class="c5">{{__ "Prescription information:" }}</span></p>
+
+    <p class="c6"><span class="c5">{{ certificate_prescription_info }}:</span></p>
     <p class="c6">
-      <span class="c10">{{__ "Prescription" }} </span
-      ><span class="c1">{{__ "Hash:" }} {{ prescriptionHash }}</span>
+      <span class="c10">{{ certificate_prescription }} </span
+      ><span class="c1">Hash: {{ prescriptionHash }}</span>
     </p>
     <p class="c6">
-      <span class="c1">{{__ "Max number of uses:" }} {{ maxUses }}</span>
+      <span class="c1">{{ certificate_max_uses }}: {{ maxUses }}</span>
     </p>
     <p class="c6">
-      <span class="c1">{{__ "Expiration date:" }} {{ expiration }}</span>
+      <span class="c1">{{ certificate_expiration }}: {{ expiration }}</span>
     </p>
     <p class="c6">
-      <span class="c1">{{__ "Private prescription:" }} {{ isPrivate }}</span>
+      <span class="c1">{{ certificate_private }}: {{ isPrivate }}</span>
     </p>
+
     <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
-    <p class="c2" style="page-break-before: always;"><span class="c1"></span></p>
-    <div style="padding-top: 96px;">
+    
     <p class="c6">
-      <span class="c5">{{__ "The prescription was digitally signed as follows:" }}</span>
-    </p>
-    <p class="c2"><span class="c1"></span></p>
-    <p class="c6">
-      <span class="c1">{{__ "Doctor Blockchain ID:" }} {{ blockchainId }}</span>
-    </p>
-    <p class="c6">
-      <span class="c1">{{__ "Digital signature:" }} {{ digitalSignature }}</span>
-    </p>
-    <p class="c6">
-      <span class="c1">{{__ "Signed message:" }} {{ message }}</span>
+      <span class="c5">{{ certificate_digital_signature_info }}:</span>
     </p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c6">
-      <span class="c1"
-        >{{__ "The digital signature can be validated online" }}
-        <a href="https://originalmy.com">{{__ "here" }}</a>.</span
-      >
+      <span class="c1">{{ certificate_blockchainid }}: {{ blockchainId }}</span>
+    </p>
+    <p class="c2"><span class="c1"></span></p>
+    <p class="c6">
+      <span class="c1">{{ certificate_digital_signature }}: <br />{{ digitalSignature }}</span>
+    </p>
+    <p class="c2"><span class="c1"></span></p>
+    <p class="c6">
+      <span class="c1">{{ certificate_message }}: <br />{{ message }}</span>
+    </p>
+    <p class="c2"><span class="c1"></span></p>
+    <p class="c2"><span class="c1"></span></p>
+    <p class="c6">
+      <span class="c1">{{ certificate_validation_link }}
+        <a style="word-break: break-all;" href="{{ verifyUrl }}">https://originalmy.com/verify</a>
+      </span>
     </p>
   </body>
 </html>
