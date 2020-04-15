@@ -3,7 +3,7 @@ const { Doctor } = require("../../models");
 const getOrCreate = async ({ name, email, blockchainid, documentId }) => {
   const doctor = await Doctor.findOne({
     where: {
-      documentId: documentId,
+      blockchainId: blockchainid
     },
   });
   if (doctor) return doctor;
