@@ -6,6 +6,7 @@ import path from "path";
 import bodyParser from "body-parser";
 import { PrescriptionRouter, DoctorRouter } from "./routes";
 import ResponseMiddleware from "./middlewares/responses";
+import ApiKeyMiddleware from "./middlewares/api-key";
 import i18n from "i18n";
 import exphbs from "express-handlebars";
 
@@ -37,6 +38,7 @@ app.use(i18n.init);
 
 // ROUTES
 app.use(ResponseMiddleware);
+app.use(ApiKeyMiddleware);
 
 app.get("/", (req, res) => {
   return res.send("Server UP");
