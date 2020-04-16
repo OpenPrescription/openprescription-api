@@ -3,6 +3,8 @@ import { PatientPrescriptionMail } from "../../mails";
 import { PDFHtml } from "../../tools/pdf-kit";
 import rp from "request-promise";
 import crypto from "crypto";
+import i18n from "i18n";
+
 
 const notifyCreaction = (
   prescriptionFile,
@@ -157,6 +159,7 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     doctorExtraInfo: JSON.parse(doctor.doctorExtraInfo),
     lang,
   });
+  console.log("LOCALE STORE: " + i18n.getLocale());
   console.log("CERTIFY PRESCRIPTION");
   const resPres = await certifyDocument(hash); // Certify prescription document in blockchain
   console.log("CERTIFY CERTIFICATE");
