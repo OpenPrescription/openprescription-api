@@ -293,9 +293,7 @@
         />
       </span>
     </p>
-    <p class="c3 c4"><span class="c7"></span></p>
     <p class="c3"><span class="c0">{{ certificate_title }}</span></p>
-    <p class="c2"><span class="c0"></span></p>
     <p class="c2"><span class="c0"></span></p>
     <p class="c6">
       <span class="c1"
@@ -303,7 +301,6 @@
         #{{ prescriptionId }}, {{ certificate_subtitle2 }}</span
       >
     </p>
-    <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c6"><span class="c5">{{ certificate_doctor_info }}:</span></p>
     <p class="c6">
@@ -316,12 +313,15 @@
       <span class="c1">{{__ "Email:"}} {{ doctorEmail }}</span>
     </p>
     {{#if doctorExtraInfo}}
-    <p class="c6"><span class="c1">{{__ "Details:"}} </span></p>
+    <!--<p class="c6"><span class="c1">{{__ "Details:"}} </span></p>-->
     <p class="c6">
       {{#each doctorExtraInfo}}
        <pre class="c1">{{ this }} </pre>
       {{/each}}
     </p>
+    {{else}}
+      <p class="c2"><span class="c1"></span></p>
+      <p class="c2"><span class="c1"></span></p>
     {{/if}}
 
     <p class="c6"><span class="c5">{{ certificate_patient_info }}:</span></p>
@@ -371,7 +371,6 @@
     <p class="c6">
       <span class="c1">{{ certificate_message }}: <br />{{ message }}</span>
     </p>
-    <p class="c2"><span class="c1"></span></p>
     <p class="c2"><span class="c1"></span></p>
     <p class="c6">
       <span class="c1">{{ certificate_validation_link }}
