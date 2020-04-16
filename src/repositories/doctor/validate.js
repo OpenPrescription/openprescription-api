@@ -10,7 +10,7 @@ export const nationalId = async (countryCode, { id, name }) => {
 };
 
 export const newVerificationIsNeeded = async (documentId) => {
-  if (process.env.DOCTORID_VALIDATION != "1" || documentId == "99999")
+  if (process.env.DOCTORID_VALIDATION != "1" || documentId.match(/99999/) != null)
     return false;
   const doctor = await Doctor.findOne({
     where: {
