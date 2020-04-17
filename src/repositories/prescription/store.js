@@ -48,7 +48,7 @@ const createCertificate = async ({
   const blockchainId = blockSignaturePieces[1];
   const digitalSignature = blockSignaturePieces[2];
   const pdf = await new PDFHtml()
-    .template("certificate")
+    .template("certificate_pt")
     .setLocale(lang)
     .compile({
       prescriptionId,
