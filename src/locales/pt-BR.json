@@ -36,5 +36,6 @@
 	"certificate_validation_link": "A assinatura digital pode ser verificada online",
 	"certificate_here": "aqui",
 	"Email:": "Email:",
-	"Details:": "Details:"
+	"Details:": "Details:",
+	"prescription_mail_template": "prescription_pt"
 }

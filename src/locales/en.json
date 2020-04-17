@@ -34,5 +34,6 @@
 	"Details:": "Details:",
 	"Your Prescription": "Your Prescription",
 	"prescription.pdf": "prescription.pdf",
-	"prescription-certificate.pdf": "prescription-certificate.pdf"
+	"prescription-certificate.pdf": "prescription-certificate.pdf",
+	"prescription_mail_template": "prescription"
 }
