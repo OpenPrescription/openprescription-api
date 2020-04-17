@@ -13,7 +13,7 @@
     "test": "babel-node tests/index.js",
     "copy-views": "cp -r src/views/ build/",
     "copy-locales": "cp -r src/locales/ build/",
-    "build-server": "babel src -d build && npm run copy-views  && npm run copy-locales",
+    "build-server": "babel src -d build && npm run copy-views && npm run copy-locales",
     "build": "npm run clean && npm run build-server"
   },
   "dependencies": {
