@@ -40,9 +40,13 @@ export default class Html {
       layoutsDir: path.resolve(__dirname, "../../../views/documents/layouts"),
       helpers: {
         __: function () {
+          console.log("LOCALE: " + i18n.getLocale());
+          console.log(i18n.__.apply(this, arguments));
           return i18n.__.apply(this, arguments);
         },
         __n: function () {
+          console.log("LOCALE: " + i18n.getLocale());
+          console.log(i18n.__n.apply(this, arguments));
           return i18n.__n.apply(this, arguments);
         },
       },
