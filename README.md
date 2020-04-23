@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Open Prescription
 #### Open Prescription is a system for authenticating and signing medical prescriptions by validated doctors using a digital certificate and drug dispensing tracking
 
@@ -48,7 +47,6 @@ Through countries API's or platforms to check the doctor speciality and their re
 
 ### Sponsors, partnerships and contributors
 * [OriginalMy](https://originalmy.com)
-* [E-Pro Saúde](http://e-prosaude.com.br)
 * [Digital Republic](https://digitalrepublic.com.br/)
 
 
@@ -95,4 +93,3 @@ For more information about using Node.js on Heroku, see these Dev Center article
 - [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
 - [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
->>>>>>> development
