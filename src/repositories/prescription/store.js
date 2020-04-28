@@ -156,7 +156,7 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
     expiredAt: expirationDate,
     isPrivate: data.isPrivate,
     blockSignature: JSON.parse(data.doctor).block,
-    doctorExtraInfo: JSON.parse(doctor.doctorExtraInfo),
+    doctorExtraInfo: doctor.doctorExtraInfo ? JSON.parse(doctor.doctorExtraInfo) : null,
     lang,
   });
   console.log("LOCALE STORE: " + i18n.getLocale());
