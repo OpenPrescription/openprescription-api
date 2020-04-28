@@ -1,5 +1,6 @@
 import rp from "request-promise";
 import DoctorValidation from "../interfaces/doctor-validation.interface";
+import AwsAPIGateway from "../../aws-api-gateway";
 
 export default class BrazilianFederalCouncilofMedicine {
 
@@ -16,16 +17,13 @@ export default class BrazilianFederalCouncilofMedicine {
     return doctorName.split(" ")[0];
   }
 
-  _request() {
+  async _request() {
     console.log(this.doctor);
-    return rp({
-      url: "https://kvglzg9apl.execute-api.us-east-1.amazonaws.com/search/br",
-      json: true,
-      qs: {
-        doctorid: this._removeStateFromDoctorId(this.doctor.id),
-        doctorname: this._getFirstName(this.doctor.name),
-      },
+    const response = await new AwsAPIGateway('kvglzg9apl').get('/search/br', {
+      doctorid: this._removeStateFromDoctorId(this.doctor.id),
+      doctorname: this._getFirstName(this.doctor.name),
     });
+    return response.data;
   }
 
   async validate() {

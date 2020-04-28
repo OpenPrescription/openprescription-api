@@ -12,7 +12,9 @@ Router.post("/validate", async (req, res) => {
       );
       if (!needVerification)
         return res.success({ isValid: true, validations: [] });
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
     const result = await DoctorRepository.validate.nationalId(country, {
       name,
       id,

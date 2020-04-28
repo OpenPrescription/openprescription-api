@@ -17,7 +17,8 @@ export const newVerificationIsNeeded = async (documentId) => {
       documentId,
     },
   });
-  if (!doctor.lastVerificationAt) return true;
+  if(!doctor) return true;
+  if (doctor && !doctor.lastVerificationAt) return true;
   const dateToValidate = doctor.lastVerificationAt.setDate(
     doctor.lastVerificationAt.getDate() +
       parseInt(process.env.DOCTORID_VERIFICATION_TIME) || 30
