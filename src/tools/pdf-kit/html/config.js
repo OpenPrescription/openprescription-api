@@ -21,6 +21,12 @@ module.exports = {
   header: {
     height: "0",
   },
+  // footer: {
+  //   height: "96px",
+  //   contents: {
+  //     default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
+  //   },
+  // },
 
   // Zooming option, can be used to scale images if `options.type` is not pdf
   zoomFactor: "1", // default is 1

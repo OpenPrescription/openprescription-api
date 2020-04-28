@@ -17,8 +17,7 @@
 	"Thanks": "Obrigado",
 	"OpenPrescription Team": "Time OpenPrescription",
 	"certificate_title": "Certificado de Autenticidade",
-	"certificate_subtitle1": "Open Prescription certifica a autenticidade da receita médica número",
-	"certificate_subtitle2": "as informações podem ser encontradas abaixo:",
+	"certificate_subtitle": "Este certificado, disponibilizado pela Open Prescription, comprova a autenticidade da receita médica número #%s. As informações podem ser encontradas abaixo:",
 	"certificate_doctor_info": "Informações do médico(a)",
 	"certificate_name": "Nome",
 	"certificate_doctor_id": "Número de registro",
@@ -36,5 +35,13 @@
 	"certificate_validation_link": "A assinatura digital pode ser verificada online",
 	"certificate_here": "aqui",
 	"Email:": "Email:",
-	"Details:": "Details:"
+	"Details:": "Details:",
+	"Certificado de Autenticidade": "Certificado de Autenticidade",
+	"Pharmacy Instruction:": "Instrução para a Farmácia:",
+	"For the pharmacy to validate the prescription and perform the dispensing of the medicine, just:": "Para que a farmácia valide a receita e realize a dispensação do remédio, basta:",
+	"1 - Access <a href=\"%s\">%s</a> and submit a digital medical prescription": "1 - Acessar <a href=\"%s\">%s</a> e submeter a receita médica digital",
+	"OR": "OU",
+	"2 - Scan the QR Code below": "2 - Escanear o QR Code abaixo",
+	"certificate_subtitle1": "certificate_subtitle1",
+	"certificate_subtitle2": "certificate_subtitle2"
 }
