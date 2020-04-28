@@ -68,8 +68,7 @@ const createCertificate = async ({
       doctorDocumentId,
       doctorExtraInfo,
       certificate_title: __("certificate_title"),
-      certificate_subtitle1: __("certificate_subtitle1"),
-      certificate_subtitle2: __("certificate_subtitle2"),
+      certificate_subtitle: __("certificate_subtitle", prescriptionId),
       certificate_doctor_info: __("certificate_doctor_info"),
       certificate_name: __("certificate_name"),
       certificate_doctor_id: __("certificate_doctor_id"),
@@ -88,6 +87,7 @@ const createCertificate = async ({
       certificate_message: __("certificate_message"),
       certificate_validation_link: __("certificate_validation_link"),
       certificate_here: __("certificate_here"),
+      qrcodeUrl: `${process.env.PHARMACY_HOST}/${hash}`,
       verifyUrl: `https://originalmy.com/verify?address=${new Buffer(
         blockchainId
       ).toString("base64")}&signature=${new Buffer(digitalSignature).toString(
@@ -161,11 +161,11 @@ const create = async (doctor, prescriptionFile, data, doctorDocumentId) => {
   });
   console.log("LOCALE STORE: " + i18n.getLocale());
   console.log("CERTIFY PRESCRIPTION");
-  const resPres = await certifyDocument(hash); // Certify prescription document in blockchain
+  //const resPres = await certifyDocument(hash); // Certify prescription document in blockchain
   console.log("CERTIFY CERTIFICATE");
   const certificateHash = buffer2sha256(certificate).toString();
-  const resCert = await certifyDocument(certificateHash); // Certify prescription certificate in blockchain
-  console.log(resPres, resCert);
+ // const resCert = await certifyDocument(certificateHash); // Certify prescription certificate in blockchain
+  //console.log(resPres, resCert);
   prescription.certificateHash = certificateHash;
   prescription.save();
   notifyCreaction(prescriptionFile, certificate, {

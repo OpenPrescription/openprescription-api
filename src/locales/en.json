@@ -1,7 +1,6 @@
 {
 	"certificate_title": "Certificate of Authenticity",
-	"certificate_subtitle1": "Open Prescription certifies the authenticity of the prescription number",
-	"certificate_subtitle2": "whose information can be find below:",
+	"certificate_subtitle": "Open Prescription certifies the authenticity of the prescription number #%s, whose information can be find below:",
 	"certificate_doctor_info": "Doctor's information",
 	"certificate_name": "name",
 	"certificate_doctor_id": "Doctor registry id",
@@ -34,5 +33,11 @@
 	"Details:": "Details:",
 	"Your Prescription": "Your Prescription",
 	"prescription.pdf": "prescription.pdf",
-	"prescription-certificate.pdf": "prescription-certificate.pdf"
+	"prescription-certificate.pdf": "prescription-certificate.pdf",
+	"Pharmacy Instruction:": "Pharmacy Instruction:",
+	"For the pharmacy to validate the prescription and perform the dispensing of the medicine, just:": "For the pharmacy to validate the prescription and perform the dispensing of the medicine, just:",
+	"1 - Access <a href=\"%s\">%s</a> and submit a digital medical prescription": "1 - Access <a href=\"%s\">%s</a> and submit a digital medical prescription",
+	"OR": "OR",
+	"2 - Scan the QR Code below": "2 - Scan the QR Code below",
+	"Certificate of Authenticity": "Certificate of Authenticity"
 }
