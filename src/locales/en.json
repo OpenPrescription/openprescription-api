@@ -39,5 +39,8 @@
 	"1 - Access <a href=\"%s\">%s</a> and submit a digital medical prescription": "1 - Access <a href=\"%s\">%s</a> and submit a digital medical prescription",
 	"OR": "OR",
 	"2 - Scan the QR Code below": "2 - Scan the QR Code below",
-	"Certificate of Authenticity": "Certificate of Authenticity"
+	"Certificate of Authenticity": "Certificate of Authenticity",
+	"This medical prescription was digitally signed by": "This medical prescription was digitally signed by",
+	"with Blockchain ID No.": "with Blockchain ID No.",
+	"and has legal validity ensured by Provisional Measure No. 2,200-2 / 2001, article 10 , paragraph 2, which does not preclude the use of other means of proving the authorship and integrity of electronic documents as long as the parties accept as valid.": "and has legal validity ensured by Provisional Measure No. 2,200-2 / 2001, article 10 , paragraph 2, which does not preclude the use of other means of proving the authorship and integrity of electronic documents as long as the parties accept as valid."
 }

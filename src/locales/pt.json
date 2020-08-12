@@ -43,5 +43,8 @@
 	"OR": "OU",
 	"2 - Scan the QR Code below": "2 - Escanear o QR Code abaixo",
 	"certificate_subtitle1": "certificate_subtitle1",
-	"certificate_subtitle2": "certificate_subtitle2"
+	"certificate_subtitle2": "certificate_subtitle2",
+	"This medical prescription was digitally signed by": "Esta receita médica foi assinada digitalmente por",
+	"with Blockchain ID No.": "com o Blockchain ID nº",
+	"and has legal validity ensured by Provisional Measure No. 2,200-2 / 2001, article 10 , paragraph 2, which does not preclude the use of other means of proving the authorship and integrity of electronic documents as long as the parties accept as valid.": "e possui validade jurídica assegurada pela Medida Provisória nº 2.200-2/2001, artigo 10, parágrafo 2º, que não impede a utilização de outros meios de comprovação da autoria e integridade de documentos eletrônicos desde que as partes aceitem como válido."
 }
