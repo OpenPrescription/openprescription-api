@@ -31,7 +31,7 @@ export default class BrazilianFederalCouncilofMedicine {
 
   async validate() {
     const response = await this._request();
-    const isValid = response.doctorData !== "";
+    const isValid = new RegExp("CRM:\\s+\\d+(\\s+-\\s+\\w{2})?","gi").test(response.doctorData)
     return new DoctorValidation(isValid, response.doctorData);
   }
 }
